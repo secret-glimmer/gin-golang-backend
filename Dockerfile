@@ -1,9 +1,18 @@
 FROM golang:1.21.4
 
+# Set destination for COPY
 WORKDIR /opt/app
 
-COPY ./cmd ./cmd
-COPY ./go.* .
+# Prepare swag cli
+RUN export PATH=$(go env GOPATH)/bin:$PATH
+
+# Copy the source code.
+COPY . .
+
+# Download Go modules
+RUN go mod download
+
 RUN go build -o app ./cmd/...
+
 
 ENTRYPOINT [ "/opt/app/app" ]

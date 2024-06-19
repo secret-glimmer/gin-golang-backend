@@ -1,9 +1,18 @@
 package routes
 
-import "github.com/gin-gonic/gin"
+import (
+	"app/controllers"
 
-func SetupRouter() {
+	"github.com/gin-gonic/gin"
+	"gorm.io/gorm"
+)
+
+func SetupRouter(db *gorm.DB) *gin.Engine {
 	router := gin.Default()
 
-	router.GET("/fx-rates")
+	fxRateController := controllers.NewFxRateController(db)
+
+	router.GET("/fx-rates/:date", fxRateController.ReadFxRatesByDate)
+
+	return router
 }
