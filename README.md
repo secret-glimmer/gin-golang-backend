@@ -6,16 +6,16 @@ Simple golang backend service using [Gin](https://gin-gonic.com/) framework.
 
 ## Run Application
 
-1. Build swagger documentation.
+1.  Copy `.env.example` file and paste it within same directory
+2.  Rename it as `.env`
+3.  Run following command
 
 ```bash
-  swag init -g cmd/main.go
+swag init -g cmd/main.go
 ```
-
-2. Run application.
 
 ```bash
-  go run ./cmd
+go run ./cmd
 ```
 
-3. You can see swagger documentation at http://locahost:8080/docs/index.html.
+4.  Visit <http://localhost:8000/swagger/index.html> in your web browser to see swagger document
