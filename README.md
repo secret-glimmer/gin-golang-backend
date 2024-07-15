@@ -1,6 +1,8 @@
 # Simple Gin Golang Backend
 
-Simple golang backend using gin framework.
+Simple golang backend service using [Gin](https://gin-gonic.com/) framework.
+
+<img src="https://raw.githubusercontent.com/gin-gonic/logo/master/color.png" align="center" width="128" />
 
 ## Run Application
 
